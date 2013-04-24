@@ -1,0 +1,1999 @@
+<Project>
+  <Name>UML</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Opened</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>RctFacade</Name>
+        <Access>Internal</Access>
+        <Location left="1354" top="1018" />
+        <Size width="162" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public RctFacade()</Member>
+        <Member type="Constructor">public RctFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConsequenceNode</Name>
+        <Access>Internal</Access>
+        <Location left="1885" top="26" />
+        <Size width="162" height="995" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private Double centroidError</Member>
+        <Member type="Field">private Double widthError</Member>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfInvokation</Member>
+        <Member type="Field">private Int32 total</Member>
+        <Member type="Field">private Boolean[] links</Member>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double[] weights</Member>
+        <Member type="Field">private Double[] backpropagationWeights</Member>
+        <Member type="Field">private Double centroid</Member>
+        <Member type="Field">private Double width</Member>
+        <Member type="Field">private Double synapticInput</Member>
+        <Member type="Field">private Double synapticOutput</Member>
+        <Member type="Field">private Double nodeProbability</Member>
+        <Member type="Field">private Double membershipOutput</Member>
+        <Member type="Field">private Double outputLayerValue</Member>
+        <Member type="Field">private Double errorLyr5</Member>
+        <Member type="Field">private Double denom</Member>
+        <Member type="Field">private Double num</Member>
+        <Member type="Field">private RuleNode[] prevNodes</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.0001</Member>
+        <Member type="Property">public Double Centroid { get; }</Member>
+        <Member type="Property">public Double Width { get; }</Member>
+        <Member type="Property">public Double[] BackpropagationWeights { get; }</Member>
+        <Member type="Property">public Double[] Weights { get; }</Member>
+        <Member type="Property">public Boolean[] Links { get; }</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public Double Error { get; }</Member>
+        <Member type="Property">public Int32 NumberOfInvokations { get; }</Member>
+        <Member type="Property">public Int32 Total { get; }</Member>
+        <Member type="Property">public Double MembershipOutput { get; }</Member>
+        <Member type="Property">public Double ErrorLyr5 { set; }</Member>
+        <Member type="Property">public Double Denom { set; }</Member>
+        <Member type="Property">public Double Num { set; }</Member>
+        <Member type="Property">public Double OutputLayerValue { set; }</Member>
+        <Member type="Constructor">public ConsequenceNode(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void setCentroidAndWidth(Double centroid, Double width)</Member>
+        <Member type="Method">public Void createAncestorNodes(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void assignAncestorNodes(Int32 index, RuleNode ruleNode)</Member>
+        <Member type="Method">public Void initMembershipFunction(Double centroid, Double width)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Member type="Method">public Void computeError()</Member>
+        <Member type="Method">public Void computeMembershipError()</Member>
+        <Member type="Method">public Void restoreMembershipError()</Member>
+        <Member type="Method">public Void computeWeights()</Member>
+        <Member type="Method">public Void computeInnerProduct()</Member>
+        <Member type="Method">public Void updateRRWeights(Double r)</Member>
+        <Member type="Method">public Void randomizeWeights()</Member>
+        <Member type="Method">public Void setWeights(Double weight)</Member>
+        <Member type="Method">public Void setWeights()</Member>
+        <Member type="Method">public Void setBackpropagationWeights(Double weight)</Member>
+        <Member type="Method">public Void setBackpropagationWeights()</Member>
+        <Member type="Method">public Void computeBackpropagationWeights()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataFileReader</Name>
+        <Access>Internal</Access>
+        <Location left="340" top="542" />
+        <Size width="519" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DataFileReader()</Member>
+        <Member type="Method">public static DataSet ReadData(String fileName)</Member>
+        <Member type="Method">public static Double[] stringToDoubleArray(String input, Char[] separator)</Member>
+        <Member type="Method">public static Double[] stringToDoubleArray(String input, Char[] separator, StringSplitOptions option)</Member>
+        <Member type="Method">public static Int32[] stringToIntArray(String input, Char[] separator)</Member>
+        <Member type="Method">public static Int32[] stringToIntArray(String input, Char[] separator, StringSplitOptions option)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SystemFunctions</Name>
+        <Access>Internal</Access>
+        <Location left="83" top="693" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SystemFunctions()</Member>
+        <Member type="Method">public static Double[] getArrayAtRow(Double[,] boxArray, Int32 row)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MlvqFacade</Name>
+        <Access>Internal</Access>
+        <Location left="831" top="1126" />
+        <Size width="354" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public MlvqFacade()</Member>
+        <Member type="Constructor">public MlvqFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataSet</Name>
+        <Access>Internal</Access>
+        <Location left="18" top="57" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Double[,] inputdata</Member>
+        <Member type="Field">private Double[,] desiredOutputs</Member>
+        <Member type="Field">private Int32 numberOfInputNodes</Member>
+        <Member type="Field">private Int32 numberOfOutputNodes</Member>
+        <Member type="Field">private Int32 totalNumberOfRecords</Member>
+        <Member type="Property">public Double[,] Inputdata { get; }</Member>
+        <Member type="Property">public Double[,] DesiredOutputs { get; }</Member>
+        <Member type="Property">public Int32 NumberOfInputNodes { get; }</Member>
+        <Member type="Property">public Int32 NumberOfOutputNodes { get; }</Member>
+        <Member type="Property">public Int32 TotalNumberOfRecords { get; }</Member>
+        <Member type="Constructor">public DataSet(Double[,] inputdata, Double[,] desiredOutputs)</Member>
+        <Member type="Method">public DataSet subset(Int32 from, Int32 to)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SrctFacade</Name>
+        <Access>Internal</Access>
+        <Location left="1185" top="1514" />
+        <Size width="162" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public SrctFacade()</Member>
+        <Member type="Constructor">public SrctFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FileWriter</Name>
+        <Access>Internal</Access>
+        <Location left="298" top="160" />
+        <Size width="396" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public FileWriter()</Member>
+        <Member type="Method">public static Void WriteToFile(String fileName, String outputData)</Member>
+        <Member type="Method">public static Void WritePopLearnOutput(PoptvrModel poptvr)</Member>
+        <Member type="Method">public static Void WritePopLearnOutput(String filename, PoptvrModel poptvr)</Member>
+        <Member type="Method">public static Void WritePopTestOutput(String outputData)</Member>
+        <Member type="Method">public static Void WritePopTestOutput(String filename, String outputData)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Program</Name>
+        <Access>Internal</Access>
+        <Location left="1121" top="134" />
+        <Size width="179" height="177" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static Int32 inputClusterSize</Member>
+        <Member type="Field">private static Int32 outputClusterSize</Member>
+        <Member type="Constructor">public Program()</Member>
+        <Member type="Method">public static Void Main(String[] args)</Member>
+        <Member type="Method">public static Void starter()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ClusterSetting</Name>
+        <Access>Internal</Access>
+        <Location left="18" top="57" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 inputClusterSize</Member>
+        <Member type="Field">private Int32 outputClusterSize</Member>
+        <Member type="Field">private Int32 maxTrainCycleNumber</Member>
+        <Member type="Field">private Int32 printOutInterval</Member>
+        <Member type="Field">private Double widthConstant</Member>
+        <Member type="Field">private Double maxError</Member>
+        <Member type="Field">private Double learningRate</Member>
+        <Member type="Property">public Int32 InputClusterSize { get; }</Member>
+        <Member type="Property">public Int32 OutputClusterSize { get; }</Member>
+        <Member type="Property">public Int32 MaxTrainCycleNumber { get; }</Member>
+        <Member type="Property">public Int32 PrintOutInterval { get; }</Member>
+        <Member type="Property">public Double WidthConstant { get; }</Member>
+        <Member type="Property">public Double MaxError { get; }</Member>
+        <Member type="Property">public Double LearningRate { get; }</Member>
+        <Member type="Constructor">public ClusterSetting(Int32 inputClusterSize, Int32 outputClusterSize, Int32 maxTrainCycleNumber, Int32 printOutInterval, Double widthConstant, Double maxError, Double learningRate)</Member>
+        <Member type="Method">public static ClusterSetting getClusterSettings()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InputNode</Name>
+        <Access>Internal</Access>
+        <Location left="1159" top="341" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Double value</Member>
+        <Member type="Property">public Double Value { get; set; }</Member>
+        <Member type="Constructor">public InputNode()</Member>
+        <Member type="Constructor">public InputNode(Double value)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RCT</Name>
+        <Access>Internal</Access>
+        <Location left="149" top="996" />
+        <Size width="162" height="434" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Int32 total</Member>
+        <Member type="Field">private Double[] synapticInput</Member>
+        <Member type="Field">private Double[] nodeProbability</Member>
+        <Member type="Field">private Double[] synapticOutput</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private Int32[] patternCluster</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.01</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 40</Member>
+        <Member type="Field">private const Int32 MAXCYCLES = 1000</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Constructor">public RCT(Int32 numberOfInputs, Int32 numberOfClusters, Int32 totalNumber)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">private Void computeInitialCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids_(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public String testOutputClassification(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MLVQ</Name>
+        <Access>Internal</Access>
+        <Location left="546" top="1329" />
+        <Size width="505" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Double[] weights</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private const Double MAXERROR = 0.001</Member>
+        <Member type="Field">private const Int32 MAXCYCLES = 50000</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 40</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Constructor">public MLVQ(Int32 numberOfInputs, Int32 numberOfClusters)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PoptvrSystem</Name>
+        <Access>Internal</Access>
+        <Location left="149" top="1170" />
+        <Size width="571" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private PoptvrModel poptvr</Member>
+        <Member type="Field">private ClusterFacadeInterface clusterFacade</Member>
+        <Member type="Field">private ClusterInterface inputCluster</Member>
+        <Member type="Field">private ClusterInterface outputCluster</Member>
+        <Member type="Constructor">public PoptvrSystem(DataSet dataset, ClusterSetting clusterSetting, ClusterFacadeInterface clusterFacade)</Member>
+        <Member type="Method">public Void InitClusters(ClusterFacadeInterface clusterFacade)</Member>
+        <Member type="Method">public Void InitClusters()</Member>
+        <Member type="Method">public PoptvrModel PopLearn()</Member>
+        <Member type="Method">public Void PopTest(DataSet dataset)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PrintToScreen</Name>
+        <Access>Internal</Access>
+        <Location left="18" top="407" />
+        <Size width="162" height="162" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public PrintToScreen()</Member>
+        <Member type="Method">public static String stringrize(Double[] data)</Member>
+        <Member type="Method">public static Void print(String title, Double[,] data)</Member>
+        <Member type="Method">public static String stringrize(Double[,] data)</Member>
+        <Member type="Method">public static String stringrize(Double[,,] data)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RuleNode</Name>
+        <Access>Internal</Access>
+        <Location left="1348" top="119" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private ConditionNode[] prevNodes</Member>
+        <Member type="Property">public Double Error { get; set; }</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public ConditionNode[] PrevNodes { get; }</Member>
+        <Member type="Constructor">public RuleNode()</Member>
+        <Member type="Constructor">public RuleNode(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void createAncestorNodes(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void assignAncestorNode(Int32 index, ConditionNode ancestorNode)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConditionNode</Name>
+        <Access>Internal</Access>
+        <Location left="1543" top="61" />
+        <Size width="162" height="417" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double centroid</Member>
+        <Member type="Field">private Double width</Member>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private Double centroidEerror</Member>
+        <Member type="Field">private Double widthError</Member>
+        <Member type="Field">private InputNode prevNode</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.0001</Member>
+        <Member type="Property">public InputNode PrevNode { get; set; }</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public Double Error { get; }</Member>
+        <Member type="Property">public Double Width { get; }</Member>
+        <Member type="Property">public Double Centroid { get; }</Member>
+        <Member type="Constructor">public ConditionNode(InputNode inputNode)</Member>
+        <Member type="Method">public Void setCentroidAndWidth(Double centroid, Double width)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Member type="Method">public Void computeError(Double error)</Member>
+        <Member type="Method">public Void computeMembershipError()</Member>
+        <Member type="Method">public Void restoreLastMemebership()</Member>
+        <Member type="Method">public Void clearError()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SOclusterFacade</Name>
+        <Access>Internal</Access>
+        <Location left="1316" top="1356" />
+        <Size width="162" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public SOclusterFacade()</Member>
+        <Member type="Constructor">public SOclusterFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AppConfig</Name>
+        <Access>Internal</Access>
+        <Location left="820" top="101" />
+        <Size width="241" height="273" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public AppConfig()</Member>
+        <Member type="Method">public static Int32 getInputClusterSize()</Member>
+        <Member type="Method">public static Int32 getOutputClusterSize()</Member>
+        <Member type="Method">public static Int32 getMaxTrainCycleNumber()</Member>
+        <Member type="Method">public static Int32 getPrintOutInterval()</Member>
+        <Member type="Method">public static Double getWidthConstant()</Member>
+        <Member type="Method">public static Double getMaxError()</Member>
+        <Member type="Method">public static Double getLearningRate()</Member>
+        <Member type="Method">public static String getTrainFilename()</Member>
+        <Member type="Method">public static String getTestFilename()</Member>
+        <Member type="Method">public static String getOutputFolder()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SOcluster</Name>
+        <Access>Internal</Access>
+        <Location left="53" top="1197" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Double[] weights</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private const Int32 MAXCYCLES = 5000</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 40</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Constructor">public SOcluster(Int32 numberOfInputs, Int32 numberOfClusters)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">private Void computeInitialCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Member type="Method">private Void computeFinalCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public String testOutputClassification(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OutputNode</Name>
+        <Access>Internal</Access>
+        <Location left="1754" top="92" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private ConsequenceNode[] prevNodes</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public Double Error { get; }</Member>
+        <Member type="Constructor">public OutputNode(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void assignAncestorNodes(Int32 index, ConsequenceNode consequenceNode)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Member type="Method">public Void computeError(Double desiredValue)</Member>
+        <Member type="Method">public Void writeToConsequenceLayer(Double outputLayerValue)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SRCT</Name>
+        <Access>Internal</Access>
+        <Location left="149" top="1255" />
+        <Size width="162" height="417" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfOutputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Double[,,] clusters</Member>
+        <Member type="Field">private Double[,,] clusterWidths</Member>
+        <Member type="Field">private Double[,] synapticInputs</Member>
+        <Member type="Field">private Double[,] synapticOutputs</Member>
+        <Member type="Field">private Double[,] nodeProbabilities</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.01</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 10</Member>
+        <Member type="Field">private const Int32 MAXLOOPS = 1000</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Constructor">public SRCT(Int32 numberOfInputs, Int32 numberOfClusters, Int32 numberOfOutputs)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Double testOutputClassification(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Void averageCentroidWidth()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ClusterFacadeInterface</Name>
+        <Access>Internal</Access>
+        <Location left="831" top="963" />
+        <Size width="230" height="129" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">DataSet DataSet { set; }</Member>
+        <Member type="Method">ClusterInterface getInputCluster()</Member>
+        <Member type="Method">ClusterInterface getOutputCluster()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ClusterInterface</Name>
+        <Access>Internal</Access>
+        <Location left="127" top="1022" />
+        <Size width="493" height="129" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">Double[,] Centroids { get; }</Member>
+        <Member type="Property">Double[,] Widths { get; }</Member>
+        <Member type="Method">Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>POPTVR_1</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>ClusterInterface</Name>
+        <Access>Internal</Access>
+        <Location left="339" top="433" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Property">Double[,] Centroids { get; }</Member>
+        <Member type="Property">Double[,] Widths { get; }</Member>
+        <Member type="Method">Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ClusterFacadeInterface</Name>
+        <Access>Internal</Access>
+        <Location left="1088" top="468" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Property">ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">DataSet DataSet { set; }</Member>
+        <Member type="Method">ClusterInterface getInputCluster()</Member>
+        <Member type="Method">ClusterInterface getOutputCluster()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>SRCT</Name>
+        <Access>Internal</Access>
+        <Location left="613" top="597" />
+        <Size width="162" height="417" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfOutputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Double[,,] clusters</Member>
+        <Member type="Field">private Double[,,] clusterWidths</Member>
+        <Member type="Field">private Double[,] synapticInputs</Member>
+        <Member type="Field">private Double[,] synapticOutputs</Member>
+        <Member type="Field">private Double[,] nodeProbabilities</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.01</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 10</Member>
+        <Member type="Field">private const Int32 MAXLOOPS = 1000</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Constructor">public SRCT(Int32 numberOfInputs, Int32 numberOfClusters, Int32 numberOfOutputs)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Double testOutputClassification(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Void averageCentroidWidth()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OutputNode</Name>
+        <Access>Internal</Access>
+        <Location left="262" top="35" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private ConsequenceNode[] prevNodes</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public Double Error { get; }</Member>
+        <Member type="Constructor">public OutputNode(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void assignAncestorNodes(Int32 index, ConsequenceNode consequenceNode)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Member type="Method">public Void computeError(Double desiredValue)</Member>
+        <Member type="Method">public Void writeToConsequenceLayer(Double outputLayerValue)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SOcluster</Name>
+        <Access>Internal</Access>
+        <Location left="57" top="597" />
+        <Size width="162" height="332" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Double[] weights</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private const Int32 MAXCYCLES = 5000</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 40</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Constructor">public SOcluster(Int32 numberOfInputs, Int32 numberOfClusters)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">private Void computeInitialCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Member type="Method">private Void computeFinalCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public String testOutputClassification(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AppConfig</Name>
+        <Access>Internal</Access>
+        <Location left="42" top="316" />
+        <Size width="162" height="264" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public AppConfig()</Member>
+        <Member type="Method">public static Int32 getInputClusterSize()</Member>
+        <Member type="Method">public static Int32 getOutputClusterSize()</Member>
+        <Member type="Method">public static Int32 getMaxTrainCycleNumber()</Member>
+        <Member type="Method">public static Int32 getPrintOutInterval()</Member>
+        <Member type="Method">public static Double getWidthConstant()</Member>
+        <Member type="Method">public static Double getMaxError()</Member>
+        <Member type="Method">public static Double getLearningRate()</Member>
+        <Member type="Method">public static String getTrainFilename()</Member>
+        <Member type="Method">public static String getTestFilename()</Member>
+        <Member type="Method">public static String getOutputFolder()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SOclusterFacade</Name>
+        <Access>Internal</Access>
+        <Location left="814" top="597" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public SOclusterFacade()</Member>
+        <Member type="Constructor">public SOclusterFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConditionNode</Name>
+        <Access>Internal</Access>
+        <Location left="1054" top="35" />
+        <Size width="162" height="417" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double centroid</Member>
+        <Member type="Field">private Double width</Member>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private Double centroidEerror</Member>
+        <Member type="Field">private Double widthError</Member>
+        <Member type="Field">private InputNode prevNode</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.0001</Member>
+        <Member type="Property">public InputNode PrevNode { get; set; }</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public Double Error { get; }</Member>
+        <Member type="Property">public Double Width { get; }</Member>
+        <Member type="Property">public Double Centroid { get; }</Member>
+        <Member type="Constructor">public ConditionNode(InputNode inputNode)</Member>
+        <Member type="Method">public Void setCentroidAndWidth(Double centroid, Double width)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Member type="Method">public Void computeError(Double error)</Member>
+        <Member type="Method">public Void computeMembershipError()</Member>
+        <Member type="Method">public Void restoreLastMemebership()</Member>
+        <Member type="Method">public Void clearError()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RuleNode</Name>
+        <Access>Internal</Access>
+        <Location left="796" top="35" />
+        <Size width="162" height="264" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private ConditionNode[] prevNodes</Member>
+        <Member type="Property">public Double Error { get; set; }</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public ConditionNode[] PrevNodes { get; }</Member>
+        <Member type="Constructor">public RuleNode()</Member>
+        <Member type="Constructor">public RuleNode(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void createAncestorNodes(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void assignAncestorNode(Int32 index, ConditionNode ancestorNode)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PoptvrModel</Name>
+        <Access>Internal</Access>
+        <Location left="734" top="147" />
+        <Size width="162" height="842" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfOutputs</Member>
+        <Member type="Field">private Int32 inputClusterSize</Member>
+        <Member type="Field">private Int32 outputClusterSize</Member>
+        <Member type="Field">private Int32[,] rules</Member>
+        <Member type="Field">private InputNode[] inputLayer</Member>
+        <Member type="Field">private ConditionNode[] conditionLayer</Member>
+        <Member type="Field">private RuleNode[] ruleLayer</Member>
+        <Member type="Field">private ConsequenceNode[] consequenceLayer</Member>
+        <Member type="Field">private OutputNode[] outputLayer</Member>
+        <Member type="Field">private String initialWeightsString</Member>
+        <Member type="Field">private String selectedWeightsString</Member>
+        <Member type="Field">private String fuzzyRulesString</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Property">public OutputNode[] OutputLayer { get; }</Member>
+        <Member type="Property">public Int32 NumberOfInputs { get; }</Member>
+        <Member type="Property">public String InitialWeightsString { get; }</Member>
+        <Member type="Property">public String SelectedWeightsString { get; }</Member>
+        <Member type="Property">public String FuzzyRulesString { get; }</Member>
+        <Member type="Constructor">public PoptvrModel(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Constructor">public PoptvrModel(Int32 numberOfInputs, Int32 inputClustersSize, Int32 numberOfOutputs, Int32 outputClustersSize)</Member>
+        <Member type="Method">public String initMembership(ClusterInterface inputCluster, ClusterInterface outputCluster)</Member>
+        <Member type="Method">public Void buildRULES()</Member>
+        <Member type="Method">private Void initInputLayer()</Member>
+        <Member type="Method">private Void initConditionLayer()</Member>
+        <Member type="Method">private Void initRuleLayer()</Member>
+        <Member type="Method">private Void initConsequenceLayer()</Member>
+        <Member type="Method">private Void initOutputLayer()</Member>
+        <Member type="Method">public Void buildPOPTVR()</Member>
+        <Member type="Method">public Void backpropagation(Double[] inputdata, Double[] desired)</Member>
+        <Member type="Method">public Void undoBackpropagation()</Member>
+        <Member type="Method">public Void popTrainBackpropagationWeights(Double[] inputdata, Double[] outputdata)</Member>
+        <Member type="Method">public Void forwardFeed(Double[] inputdata)</Member>
+        <Member type="Method">public Void maxRuleNode(Int32[] ruleNodes)</Member>
+        <Member type="Method">public Void popResetWeights()</Member>
+        <Member type="Method">public Void popTrainWeights()</Member>
+        <Member type="Method">private Void popTrainWeights(Double[] inputdata, Double[] outputdata)</Member>
+        <Member type="Method">public Void rrTrainWeights(Double[] inputdata, Double[] outputdata)</Member>
+        <Member type="Method">public Void popRandomizeWeights()</Member>
+        <Member type="Method">public Void popResetBackpropagationWeights()</Member>
+        <Member type="Method">public Void popLinksSelect()</Member>
+        <Member type="Method">public Void popLearn(DataSet dataset)</Member>
+        <Member type="Method">public Void popLearn()</Member>
+        <Member type="Method">public static String POPTest(PoptvrModel poptvr, DataSet dataset)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PrintToScreen</Name>
+        <Access>Internal</Access>
+        <Location left="42" top="383" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public PrintToScreen()</Member>
+        <Member type="Method">public static String stringrize(Double[] data)</Member>
+        <Member type="Method">public static Void print(String title, Double[,] data)</Member>
+        <Member type="Method">public static String stringrize(Double[,] data)</Member>
+        <Member type="Method">public static String stringrize(Double[,,] data)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PoptvrSystem</Name>
+        <Access>Internal</Access>
+        <Location left="749" top="298" />
+        <Size width="162" height="264" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private PoptvrModel poptvr</Member>
+        <Member type="Field">private ClusterFacadeInterface clusterFacade</Member>
+        <Member type="Field">private ClusterInterface inputCluster</Member>
+        <Member type="Field">private ClusterInterface outputCluster</Member>
+        <Member type="Constructor">public PoptvrSystem(DataSet dataset, ClusterSetting clusterSetting, ClusterFacadeInterface clusterFacade)</Member>
+        <Member type="Method">public Void InitClusters(ClusterFacadeInterface clusterFacade)</Member>
+        <Member type="Method">public Void InitClusters()</Member>
+        <Member type="Method">public PoptvrModel PopLearn()</Member>
+        <Member type="Method">public Void PopTest(DataSet dataset)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MLVQ</Name>
+        <Access>Internal</Access>
+        <Location left="244" top="597" />
+        <Size width="162" height="315" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Double[] weights</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private const Double MAXERROR = 0.001</Member>
+        <Member type="Field">private const Int32 MAXCYCLES = 50000</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 40</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Constructor">public MLVQ(Int32 numberOfInputs, Int32 numberOfClusters)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RCT</Name>
+        <Access>Internal</Access>
+        <Location left="425" top="597" />
+        <Size width="162" height="434" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Int32 total</Member>
+        <Member type="Field">private Double[] synapticInput</Member>
+        <Member type="Field">private Double[] nodeProbability</Member>
+        <Member type="Field">private Double[] synapticOutput</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private Int32[] patternCluster</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.01</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 40</Member>
+        <Member type="Field">private const Int32 MAXCYCLES = 1000</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Constructor">public RCT(Int32 numberOfInputs, Int32 numberOfClusters, Int32 totalNumber)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">private Void computeInitialCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids_(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public String testOutputClassification(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InputNode</Name>
+        <Access>Internal</Access>
+        <Location left="1316" top="35" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Double value</Member>
+        <Member type="Property">public Double Value { get; set; }</Member>
+        <Member type="Constructor">public InputNode()</Member>
+        <Member type="Constructor">public InputNode(Double value)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Program</Name>
+        <Access>Internal</Access>
+        <Location left="42" top="39" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private static Int32 inputClusterSize</Member>
+        <Member type="Field">private static Int32 outputClusterSize</Member>
+        <Member type="Constructor">public Program()</Member>
+        <Member type="Method">public static Void Main(String[] args)</Member>
+        <Member type="Method">public static Void starter()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FileWriter</Name>
+        <Access>Internal</Access>
+        <Location left="42" top="242" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public FileWriter()</Member>
+        <Member type="Method">public static Void WriteToFile(String fileName, String outputData)</Member>
+        <Member type="Method">public static Void WritePopLearnOutput(PoptvrModel poptvr)</Member>
+        <Member type="Method">public static Void WritePopLearnOutput(String filename, PoptvrModel poptvr)</Member>
+        <Member type="Method">public static Void WritePopTestOutput(String outputData)</Member>
+        <Member type="Method">public static Void WritePopTestOutput(String filename, String outputData)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SrctFacade</Name>
+        <Access>Internal</Access>
+        <Location left="1375" top="597" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public SrctFacade()</Member>
+        <Member type="Constructor">public SrctFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MlvqFacade</Name>
+        <Access>Internal</Access>
+        <Location left="998" top="597" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public MlvqFacade()</Member>
+        <Member type="Constructor">public MlvqFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SystemFunctions</Name>
+        <Access>Internal</Access>
+        <Location left="42" top="104" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public SystemFunctions()</Member>
+        <Member type="Method">public static Double[] getArrayAtRow(Double[,] boxArray, Int32 row)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataFileReader</Name>
+        <Access>Internal</Access>
+        <Location left="42" top="176" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public DataFileReader()</Member>
+        <Member type="Method">public static DataSet ReadData(String fileName)</Member>
+        <Member type="Method">public static Double[] stringToDoubleArray(String input, Char[] separator)</Member>
+        <Member type="Method">public static Double[] stringToDoubleArray(String input, Char[] separator, StringSplitOptions option)</Member>
+        <Member type="Method">public static Int32[] stringToIntArray(String input, Char[] separator)</Member>
+        <Member type="Method">public static Int32[] stringToIntArray(String input, Char[] separator, StringSplitOptions option)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConsequenceNode</Name>
+        <Access>Internal</Access>
+        <Location left="514" top="35" />
+        <Size width="162" height="995" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private Double centroidError</Member>
+        <Member type="Field">private Double widthError</Member>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfInvokation</Member>
+        <Member type="Field">private Int32 total</Member>
+        <Member type="Field">private Boolean[] links</Member>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double[] weights</Member>
+        <Member type="Field">private Double[] backpropagationWeights</Member>
+        <Member type="Field">private Double centroid</Member>
+        <Member type="Field">private Double width</Member>
+        <Member type="Field">private Double synapticInput</Member>
+        <Member type="Field">private Double synapticOutput</Member>
+        <Member type="Field">private Double nodeProbability</Member>
+        <Member type="Field">private Double membershipOutput</Member>
+        <Member type="Field">private Double outputLayerValue</Member>
+        <Member type="Field">private Double errorLyr5</Member>
+        <Member type="Field">private Double denom</Member>
+        <Member type="Field">private Double num</Member>
+        <Member type="Field">private RuleNode[] prevNodes</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.0001</Member>
+        <Member type="Property">public Double Centroid { get; }</Member>
+        <Member type="Property">public Double Width { get; }</Member>
+        <Member type="Property">public Double[] BackpropagationWeights { get; }</Member>
+        <Member type="Property">public Double[] Weights { get; }</Member>
+        <Member type="Property">public Boolean[] Links { get; }</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public Double Error { get; }</Member>
+        <Member type="Property">public Int32 NumberOfInvokations { get; }</Member>
+        <Member type="Property">public Int32 Total { get; }</Member>
+        <Member type="Property">public Double MembershipOutput { get; }</Member>
+        <Member type="Property">public Double ErrorLyr5 { set; }</Member>
+        <Member type="Property">public Double Denom { set; }</Member>
+        <Member type="Property">public Double Num { set; }</Member>
+        <Member type="Property">public Double OutputLayerValue { set; }</Member>
+        <Member type="Constructor">public ConsequenceNode(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void setCentroidAndWidth(Double centroid, Double width)</Member>
+        <Member type="Method">public Void createAncestorNodes(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void assignAncestorNodes(Int32 index, RuleNode ruleNode)</Member>
+        <Member type="Method">public Void initMembershipFunction(Double centroid, Double width)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Member type="Method">public Void computeError()</Member>
+        <Member type="Method">public Void computeMembershipError()</Member>
+        <Member type="Method">public Void restoreMembershipError()</Member>
+        <Member type="Method">public Void computeWeights()</Member>
+        <Member type="Method">public Void computeInnerProduct()</Member>
+        <Member type="Method">public Void updateRRWeights(Double r)</Member>
+        <Member type="Method">public Void randomizeWeights()</Member>
+        <Member type="Method">public Void setWeights(Double weight)</Member>
+        <Member type="Method">public Void setWeights()</Member>
+        <Member type="Method">public Void setBackpropagationWeights(Double weight)</Member>
+        <Member type="Method">public Void setBackpropagationWeights()</Member>
+        <Member type="Method">public Void computeBackpropagationWeights()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RctFacade</Name>
+        <Access>Internal</Access>
+        <Location left="1181" top="597" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public RctFacade()</Member>
+        <Member type="Constructor">public RctFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="4" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="6" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>899</X>
+          <Y>572</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1169</X>
+          <Y>538</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="12" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="13" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="17" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="18" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="22" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1260</X>
+          <Y>572</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1169</X>
+          <Y>538</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="3" second="21">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>450</X>
+          <Y>59</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>483</X>
+          <Y>59</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>prevNodes</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1241</X>
+          <Y>58</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1291</X>
+          <Y>58</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>prevNode</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="8" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>988</X>
+          <Y>56</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1013</X>
+          <Y>56</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>prevNodes</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>823</X>
+          <Y>273</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>823</X>
+          <Y>217</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>poptvr</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>958</X>
+          <Y>324</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>clusterFacade</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>721</X>
+          <Y>322</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>389</X>
+          <Y>408</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>inputCluster</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>827</X>
+          <Y>384</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>470</X>
+          <Y>408</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>outputCluster</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="21" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>710</X>
+          <Y>58</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>770</X>
+          <Y>58</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>prevNodes</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>POPTVR_2</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>ClusterInterface</Name>
+        <Access>Internal</Access>
+        <Location left="642" top="473" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Property">Double[,] Centroids { get; }</Member>
+        <Member type="Property">Double[,] Widths { get; }</Member>
+        <Member type="Method">Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ClusterFacadeInterface</Name>
+        <Access>Internal</Access>
+        <Location left="1040" top="473" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Property">ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">DataSet DataSet { set; }</Member>
+        <Member type="Method">ClusterInterface getInputCluster()</Member>
+        <Member type="Method">ClusterInterface getOutputCluster()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>SRCT</Name>
+        <Access>Internal</Access>
+        <Location left="740" top="596" />
+        <Size width="162" height="417" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfOutputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Double[,,] clusters</Member>
+        <Member type="Field">private Double[,,] clusterWidths</Member>
+        <Member type="Field">private Double[,] synapticInputs</Member>
+        <Member type="Field">private Double[,] synapticOutputs</Member>
+        <Member type="Field">private Double[,] nodeProbabilities</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.01</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 10</Member>
+        <Member type="Field">private const Int32 MAXLOOPS = 1000</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Constructor">public SRCT(Int32 numberOfInputs, Int32 numberOfClusters, Int32 numberOfOutputs)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Double testOutputClassification(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Void averageCentroidWidth()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OutputNode</Name>
+        <Access>Internal</Access>
+        <Location left="1107" top="183" />
+        <Size width="162" height="264" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private ConsequenceNode[] prevNodes</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public Double Error { get; }</Member>
+        <Member type="Constructor">public OutputNode(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void assignAncestorNodes(Int32 index, ConsequenceNode consequenceNode)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Member type="Method">public Void computeError(Double desiredValue)</Member>
+        <Member type="Method">public Void writeToConsequenceLayer(Double outputLayerValue)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SOcluster</Name>
+        <Access>Internal</Access>
+        <Location left="518" top="596" />
+        <Size width="162" height="332" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Double[] weights</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private const Int32 MAXCYCLES = 5000</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 40</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Constructor">public SOcluster(Int32 numberOfInputs, Int32 numberOfClusters)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">private Void computeInitialCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Member type="Method">private Void computeFinalCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public String testOutputClassification(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AppConfig</Name>
+        <Access>Internal</Access>
+        <Location left="60" top="211" />
+        <Size width="162" height="264" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public AppConfig()</Member>
+        <Member type="Method">public static Int32 getInputClusterSize()</Member>
+        <Member type="Method">public static Int32 getOutputClusterSize()</Member>
+        <Member type="Method">public static Int32 getMaxTrainCycleNumber()</Member>
+        <Member type="Method">public static Int32 getPrintOutInterval()</Member>
+        <Member type="Method">public static Double getWidthConstant()</Member>
+        <Member type="Method">public static Double getMaxError()</Member>
+        <Member type="Method">public static Double getLearningRate()</Member>
+        <Member type="Method">public static String getTrainFilename()</Member>
+        <Member type="Method">public static String getTestFilename()</Member>
+        <Member type="Method">public static String getOutputFolder()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SOclusterFacade</Name>
+        <Access>Internal</Access>
+        <Location left="920" top="596" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public SOclusterFacade()</Member>
+        <Member type="Constructor">public SOclusterFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConditionNode</Name>
+        <Access>Internal</Access>
+        <Location left="645" top="91" />
+        <Size width="162" height="417" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double centroid</Member>
+        <Member type="Field">private Double width</Member>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private Double centroidEerror</Member>
+        <Member type="Field">private Double widthError</Member>
+        <Member type="Field">private InputNode prevNode</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.0001</Member>
+        <Member type="Property">public InputNode PrevNode { get; set; }</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public Double Error { get; }</Member>
+        <Member type="Property">public Double Width { get; }</Member>
+        <Member type="Property">public Double Centroid { get; }</Member>
+        <Member type="Constructor">public ConditionNode(InputNode inputNode)</Member>
+        <Member type="Method">public Void setCentroidAndWidth(Double centroid, Double width)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Member type="Method">public Void computeError(Double error)</Member>
+        <Member type="Method">public Void computeMembershipError()</Member>
+        <Member type="Method">public Void restoreLastMemebership()</Member>
+        <Member type="Method">public Void clearError()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RuleNode</Name>
+        <Access>Internal</Access>
+        <Location left="848" top="183" />
+        <Size width="162" height="264" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private ConditionNode[] prevNodes</Member>
+        <Member type="Property">public Double Error { get; set; }</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public ConditionNode[] PrevNodes { get; }</Member>
+        <Member type="Constructor">public RuleNode()</Member>
+        <Member type="Constructor">public RuleNode(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void createAncestorNodes(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void assignAncestorNode(Int32 index, ConditionNode ancestorNode)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PoptvrModel</Name>
+        <Access>Internal</Access>
+        <Location left="591" top="300" />
+        <Size width="678" height="842" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfOutputs</Member>
+        <Member type="Field">private Int32 inputClusterSize</Member>
+        <Member type="Field">private Int32 outputClusterSize</Member>
+        <Member type="Field">private Int32[,] rules</Member>
+        <Member type="Field">private InputNode[] inputLayer</Member>
+        <Member type="Field">private ConditionNode[] conditionLayer</Member>
+        <Member type="Field">private RuleNode[] ruleLayer</Member>
+        <Member type="Field">private ConsequenceNode[] consequenceLayer</Member>
+        <Member type="Field">private OutputNode[] outputLayer</Member>
+        <Member type="Field">private String initialWeightsString</Member>
+        <Member type="Field">private String selectedWeightsString</Member>
+        <Member type="Field">private String fuzzyRulesString</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Property">public OutputNode[] OutputLayer { get; }</Member>
+        <Member type="Property">public Int32 NumberOfInputs { get; }</Member>
+        <Member type="Property">public String InitialWeightsString { get; }</Member>
+        <Member type="Property">public String SelectedWeightsString { get; }</Member>
+        <Member type="Property">public String FuzzyRulesString { get; }</Member>
+        <Member type="Constructor">public PoptvrModel(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Constructor">public PoptvrModel(Int32 numberOfInputs, Int32 inputClustersSize, Int32 numberOfOutputs, Int32 outputClustersSize)</Member>
+        <Member type="Method">public String initMembership(ClusterInterface inputCluster, ClusterInterface outputCluster)</Member>
+        <Member type="Method">public Void buildRULES()</Member>
+        <Member type="Method">private Void initInputLayer()</Member>
+        <Member type="Method">private Void initConditionLayer()</Member>
+        <Member type="Method">private Void initRuleLayer()</Member>
+        <Member type="Method">private Void initConsequenceLayer()</Member>
+        <Member type="Method">private Void initOutputLayer()</Member>
+        <Member type="Method">public Void buildPOPTVR()</Member>
+        <Member type="Method">public Void backpropagation(Double[] inputdata, Double[] desired)</Member>
+        <Member type="Method">public Void undoBackpropagation()</Member>
+        <Member type="Method">public Void popTrainBackpropagationWeights(Double[] inputdata, Double[] outputdata)</Member>
+        <Member type="Method">public Void forwardFeed(Double[] inputdata)</Member>
+        <Member type="Method">public Void maxRuleNode(Int32[] ruleNodes)</Member>
+        <Member type="Method">public Void popResetWeights()</Member>
+        <Member type="Method">public Void popTrainWeights()</Member>
+        <Member type="Method">private Void popTrainWeights(Double[] inputdata, Double[] outputdata)</Member>
+        <Member type="Method">public Void rrTrainWeights(Double[] inputdata, Double[] outputdata)</Member>
+        <Member type="Method">public Void popRandomizeWeights()</Member>
+        <Member type="Method">public Void popResetBackpropagationWeights()</Member>
+        <Member type="Method">public Void popLinksSelect()</Member>
+        <Member type="Method">public Void popLearn(DataSet dataset)</Member>
+        <Member type="Method">public Void popLearn()</Member>
+        <Member type="Method">public static String POPTest(PoptvrModel poptvr, DataSet dataset)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PrintToScreen</Name>
+        <Access>Internal</Access>
+        <Location left="60" top="436" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public PrintToScreen()</Member>
+        <Member type="Method">public static String stringrize(Double[] data)</Member>
+        <Member type="Method">public static Void print(String title, Double[,] data)</Member>
+        <Member type="Method">public static String stringrize(Double[,] data)</Member>
+        <Member type="Method">public static String stringrize(Double[,,] data)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PoptvrSystem</Name>
+        <Access>Internal</Access>
+        <Location left="863" top="399" />
+        <Size width="162" height="264" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private PoptvrModel poptvr</Member>
+        <Member type="Field">private ClusterFacadeInterface clusterFacade</Member>
+        <Member type="Field">private ClusterInterface inputCluster</Member>
+        <Member type="Field">private ClusterInterface outputCluster</Member>
+        <Member type="Constructor">public PoptvrSystem(DataSet dataset, ClusterSetting clusterSetting, ClusterFacadeInterface clusterFacade)</Member>
+        <Member type="Method">public Void InitClusters(ClusterFacadeInterface clusterFacade)</Member>
+        <Member type="Method">public Void InitClusters()</Member>
+        <Member type="Method">public PoptvrModel PopLearn()</Member>
+        <Member type="Method">public Void PopTest(DataSet dataset)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MLVQ</Name>
+        <Access>Internal</Access>
+        <Location left="518" top="673" />
+        <Size width="162" height="315" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Double[] weights</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private const Double MAXERROR = 0.001</Member>
+        <Member type="Field">private const Int32 MAXCYCLES = 50000</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 40</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Constructor">public MLVQ(Int32 numberOfInputs, Int32 numberOfClusters)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RCT</Name>
+        <Access>Internal</Access>
+        <Location left="740" top="673" />
+        <Size width="162" height="434" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfClusters</Member>
+        <Member type="Field">private Int32 total</Member>
+        <Member type="Field">private Double[] synapticInput</Member>
+        <Member type="Field">private Double[] nodeProbability</Member>
+        <Member type="Field">private Double[] synapticOutput</Member>
+        <Member type="Field">private Double[,] centroids</Member>
+        <Member type="Field">private Double[,] widths</Member>
+        <Member type="Field">private Int32[] patternCluster</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.01</Member>
+        <Member type="Field">private const Double WIDTH_CONSTANT = 40</Member>
+        <Member type="Field">private const Int32 MAXCYCLES = 1000</Member>
+        <Member type="Property">public Double[,] Centroids { get; }</Member>
+        <Member type="Property">public Double[,] Widths { get; }</Member>
+        <Member type="Constructor">public RCT(Int32 numberOfInputs, Int32 numberOfClusters, Int32 totalNumber)</Member>
+        <Member type="Method">public Void computeInitialCentroids(Double[,] inputdata, Double[,] outputdata, Int32 count)</Member>
+        <Member type="Method">private Void computeInitialCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids_(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Member type="Method">public Void computeFinalCentroids(Double[,] inputs, Int32 count)</Member>
+        <Member type="Method">public String testOutputClassification(Double[,] inputs, Double[,] outputs, Int32 count)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InputNode</Name>
+        <Access>Internal</Access>
+        <Location left="591" top="183" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Double value</Member>
+        <Member type="Property">public Double Value { get; set; }</Member>
+        <Member type="Constructor">public InputNode()</Member>
+        <Member type="Constructor">public InputNode(Double value)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ClusterSetting</Name>
+        <Access>Internal</Access>
+        <Location left="60" top="513" />
+        <Size width="162" height="349" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Int32 inputClusterSize</Member>
+        <Member type="Field">private Int32 outputClusterSize</Member>
+        <Member type="Field">private Int32 maxTrainCycleNumber</Member>
+        <Member type="Field">private Int32 printOutInterval</Member>
+        <Member type="Field">private Double widthConstant</Member>
+        <Member type="Field">private Double maxError</Member>
+        <Member type="Field">private Double learningRate</Member>
+        <Member type="Property">public Int32 InputClusterSize { get; }</Member>
+        <Member type="Property">public Int32 OutputClusterSize { get; }</Member>
+        <Member type="Property">public Int32 MaxTrainCycleNumber { get; }</Member>
+        <Member type="Property">public Int32 PrintOutInterval { get; }</Member>
+        <Member type="Property">public Double WidthConstant { get; }</Member>
+        <Member type="Property">public Double MaxError { get; }</Member>
+        <Member type="Property">public Double LearningRate { get; }</Member>
+        <Member type="Constructor">public ClusterSetting(Int32 inputClusterSize, Int32 outputClusterSize, Int32 maxTrainCycleNumber, Int32 printOutInterval, Double widthConstant, Double maxError, Double learningRate)</Member>
+        <Member type="Method">public static ClusterSetting getClusterSettings()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Program</Name>
+        <Access>Internal</Access>
+        <Location left="60" top="37" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private static Int32 inputClusterSize</Member>
+        <Member type="Field">private static Int32 outputClusterSize</Member>
+        <Member type="Constructor">public Program()</Member>
+        <Member type="Method">public static Void Main(String[] args)</Member>
+        <Member type="Method">public static Void starter()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FileWriter</Name>
+        <Access>Internal</Access>
+        <Location left="60" top="366" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public FileWriter()</Member>
+        <Member type="Method">public static Void WriteToFile(String fileName, String outputData)</Member>
+        <Member type="Method">public static Void WritePopLearnOutput(PoptvrModel poptvr)</Member>
+        <Member type="Method">public static Void WritePopLearnOutput(String filename, PoptvrModel poptvr)</Member>
+        <Member type="Method">public static Void WritePopTestOutput(String outputData)</Member>
+        <Member type="Method">public static Void WritePopTestOutput(String filename, String outputData)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SrctFacade</Name>
+        <Access>Internal</Access>
+        <Location left="1159" top="673" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public SrctFacade()</Member>
+        <Member type="Constructor">public SrctFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataSet</Name>
+        <Access>Internal</Access>
+        <Location left="60" top="580" />
+        <Size width="162" height="298" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Double[,] inputdata</Member>
+        <Member type="Field">private Double[,] desiredOutputs</Member>
+        <Member type="Field">private Int32 numberOfInputNodes</Member>
+        <Member type="Field">private Int32 numberOfOutputNodes</Member>
+        <Member type="Field">private Int32 totalNumberOfRecords</Member>
+        <Member type="Property">public Double[,] Inputdata { get; }</Member>
+        <Member type="Property">public Double[,] DesiredOutputs { get; }</Member>
+        <Member type="Property">public Int32 NumberOfInputNodes { get; }</Member>
+        <Member type="Property">public Int32 NumberOfOutputNodes { get; }</Member>
+        <Member type="Property">public Int32 TotalNumberOfRecords { get; }</Member>
+        <Member type="Constructor">public DataSet(Double[,] inputdata, Double[,] desiredOutputs)</Member>
+        <Member type="Method">public DataSet subset(Int32 from, Int32 to)</Member>
+        <Member type="Method">public override String ToString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MlvqFacade</Name>
+        <Access>Internal</Access>
+        <Location left="920" top="673" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public MlvqFacade()</Member>
+        <Member type="Constructor">public MlvqFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SystemFunctions</Name>
+        <Access>Internal</Access>
+        <Location left="60" top="139" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public SystemFunctions()</Member>
+        <Member type="Method">public static Double[] getArrayAtRow(Double[,] boxArray, Int32 row)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataFileReader</Name>
+        <Access>Internal</Access>
+        <Location left="60" top="282" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Constructor">public DataFileReader()</Member>
+        <Member type="Method">public static DataSet ReadData(String fileName)</Member>
+        <Member type="Method">public static Double[] stringToDoubleArray(String input, Char[] separator)</Member>
+        <Member type="Method">public static Double[] stringToDoubleArray(String input, Char[] separator, StringSplitOptions option)</Member>
+        <Member type="Method">public static Int32[] stringToIntArray(String input, Char[] separator)</Member>
+        <Member type="Method">public static Int32[] stringToIntArray(String input, Char[] separator, StringSplitOptions option)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConsequenceNode</Name>
+        <Access>Internal</Access>
+        <Location left="1025" top="80" />
+        <Size width="162" height="995" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private Double error</Member>
+        <Member type="Field">private Double centroidError</Member>
+        <Member type="Field">private Double widthError</Member>
+        <Member type="Field">private Int32 numberOfInputs</Member>
+        <Member type="Field">private Int32 numberOfInvokation</Member>
+        <Member type="Field">private Int32 total</Member>
+        <Member type="Field">private Boolean[] links</Member>
+        <Member type="Field">private Double value</Member>
+        <Member type="Field">private Double[] weights</Member>
+        <Member type="Field">private Double[] backpropagationWeights</Member>
+        <Member type="Field">private Double centroid</Member>
+        <Member type="Field">private Double width</Member>
+        <Member type="Field">private Double synapticInput</Member>
+        <Member type="Field">private Double synapticOutput</Member>
+        <Member type="Field">private Double nodeProbability</Member>
+        <Member type="Field">private Double membershipOutput</Member>
+        <Member type="Field">private Double outputLayerValue</Member>
+        <Member type="Field">private Double errorLyr5</Member>
+        <Member type="Field">private Double denom</Member>
+        <Member type="Field">private Double num</Member>
+        <Member type="Field">private RuleNode[] prevNodes</Member>
+        <Member type="Field">private const Double LEARN_CONST = 0.0001</Member>
+        <Member type="Property">public Double Centroid { get; }</Member>
+        <Member type="Property">public Double Width { get; }</Member>
+        <Member type="Property">public Double[] BackpropagationWeights { get; }</Member>
+        <Member type="Property">public Double[] Weights { get; }</Member>
+        <Member type="Property">public Boolean[] Links { get; }</Member>
+        <Member type="Property">public Double Output { get; }</Member>
+        <Member type="Property">public Double Error { get; }</Member>
+        <Member type="Property">public Int32 NumberOfInvokations { get; }</Member>
+        <Member type="Property">public Int32 Total { get; }</Member>
+        <Member type="Property">public Double MembershipOutput { get; }</Member>
+        <Member type="Property">public Double ErrorLyr5 { set; }</Member>
+        <Member type="Property">public Double Denom { set; }</Member>
+        <Member type="Property">public Double Num { set; }</Member>
+        <Member type="Property">public Double OutputLayerValue { set; }</Member>
+        <Member type="Constructor">public ConsequenceNode(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void setCentroidAndWidth(Double centroid, Double width)</Member>
+        <Member type="Method">public Void createAncestorNodes(Int32 numberOfInputs)</Member>
+        <Member type="Method">public Void assignAncestorNodes(Int32 index, RuleNode ruleNode)</Member>
+        <Member type="Method">public Void initMembershipFunction(Double centroid, Double width)</Member>
+        <Member type="Method">public Void computeInput()</Member>
+        <Member type="Method">public Void computeError()</Member>
+        <Member type="Method">public Void computeMembershipError()</Member>
+        <Member type="Method">public Void restoreMembershipError()</Member>
+        <Member type="Method">public Void computeWeights()</Member>
+        <Member type="Method">public Void computeInnerProduct()</Member>
+        <Member type="Method">public Void updateRRWeights(Double r)</Member>
+        <Member type="Method">public Void randomizeWeights()</Member>
+        <Member type="Method">public Void setWeights(Double weight)</Member>
+        <Member type="Method">public Void setWeights()</Member>
+        <Member type="Method">public Void setBackpropagationWeights(Double weight)</Member>
+        <Member type="Method">public Void setBackpropagationWeights()</Member>
+        <Member type="Method">public Void computeBackpropagationWeights()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RctFacade</Name>
+        <Access>Internal</Access>
+        <Location left="1159" top="596" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Member type="Field">private ClusterSetting clusterSetting</Member>
+        <Member type="Field">private DataSet dataset</Member>
+        <Member type="Property">public ClusterSetting ClusterSetting { set; }</Member>
+        <Member type="Property">public DataSet DataSet { set; }</Member>
+        <Member type="Constructor">public RctFacade()</Member>
+        <Member type="Constructor">public RctFacade(DataSet dataset, ClusterSetting clusterSetting)</Member>
+        <Member type="Method">public ClusterInterface getInputCluster()</Member>
+        <Member type="Method">public ClusterInterface getOutputCluster()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>712</X>
+          <Y>545</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="4" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>712</X>
+          <Y>545</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="6" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1008</X>
+          <Y>571</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="12" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>712</X>
+          <Y>696</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>713</X>
+          <Y>549</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="13" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>713</X>
+          <Y>697</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>714</X>
+          <Y>548</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="18" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1132</X>
+          <Y>697</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1122</X>
+          <Y>551</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="20" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1106</X>
+          <Y>697</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1122</X>
+          <Y>564</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="24" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1236</X>
+          <Y>566</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1121</X>
+          <Y>549</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="3" second="23">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1148</X>
+          <Y>152</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1148</X>
+          <Y>152</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>prevNodes</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>690</X>
+          <Y>158</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>690</X>
+          <Y>158</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>prevNode</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="8" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>893</X>
+          <Y>148</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>prevNodes</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>658</X>
+          <Y>269</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>658</X>
+          <Y>269</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>inputLayer</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>776</X>
+          <Y>165</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>776</X>
+          <Y>165</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>conditionLayer</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>935</X>
+          <Y>253</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>935</X>
+          <Y>253</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>ruleLayer</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="23">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1059</X>
+          <Y>155</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>consequenceLayer</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1196</X>
+          <Y>266</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1196</X>
+          <Y>266</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>outputLayer</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1117</X>
+          <Y>421</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>clusterFacade</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>838</X>
+          <Y>425</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>695</X>
+          <Y>448</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>inputCluster</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>935</X>
+          <Y>502</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>829</X>
+          <Y>502</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>outputCluster</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="23" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>992</X>
+          <Y>109</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>946</X>
+          <Y>158</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>prevNodes</StartRole>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="11" second="9">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>935</X>
+          <Y>370</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
