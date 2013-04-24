@@ -37,3 +37,6 @@ E:\Dropbox\NTU\FYP\C# Project\POPTVR\POPTVR\bin\Debug\DataFiles\iris(norm)2.txt
 C:\Users\kiza\Dropbox\NTU\FYP\C# Project\POPTVR\POPTVR\bin\Debug\POPTVR.exe.config
 C:\Users\kiza\Dropbox\NTU\FYP\C# Project\POPTVR\POPTVR\obj\x86\Debug\POPTVR.exe
 C:\Users\kiza\Dropbox\NTU\FYP\C# Project\POPTVR\POPTVR\obj\x86\Debug\POPTVR.pdb
+D:\Kiza\Project\C# Project\POPTVR\POPTVR\bin\Debug\POPTVR.exe.config
+D:\Kiza\Project\C# Project\POPTVR\POPTVR\obj\x86\Debug\POPTVR.exe
+D:\Kiza\Project\C# Project\POPTVR\POPTVR\obj\x86\Debug\POPTVR.pdb
